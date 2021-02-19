@@ -1,0 +1,49 @@
+.Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: rgba(31, 28, 28, 0.719);
+    width: 70%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 15%;
+    top: 20%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    padding: 3%;
+}
+.Button{
+    flex-direction: row !important;
+    width: 100%;
+}
+.Containr {
+    flex-direction: row;
+}
+.Button p{
+    
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+@media(max-width: 1000px) {
+    .Modal{
+        width: 100%;
+        left: 0;
+        top: 5%;
+    }
+    .Container {
+        flex-direction: column ;
+        
+        
+    }
+    .Info{
+        width: 100%;
+        overflow-y: scroll;
+        height: 300px;
+    }
+    .Player{
+        width: 100%;
+        display: flex;
+    }
+}

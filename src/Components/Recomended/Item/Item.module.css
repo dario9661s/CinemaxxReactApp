@@ -1,0 +1,11 @@
+.Container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.Container img {
+    width: 100% !important;
+    height: 200px;
+}
