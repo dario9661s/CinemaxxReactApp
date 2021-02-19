@@ -2,7 +2,7 @@
     position: fixed;
     top: 1px;
     z-index: 200;
-    background: white;
+    background: rgba(38, 37, 39, 0.918);
     width: 50%;
     height: 100vh;
     display: flex;
@@ -50,6 +50,7 @@
     color: black;
     border-bottom: 1px solid lightgray;
     transition: 0.3s ease-out;
+    color: white;
 }
 
 .NavDrawerContentAuth {

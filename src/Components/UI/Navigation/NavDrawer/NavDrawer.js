@@ -23,21 +23,16 @@ const navDrawer = (props) => {
             {/* <Logo className='NavDrawerLogo'/> */}
             <div className='NavDrawerContent'>
                 <div className='NavDrawerContentPages'>
-                    <NavLink to='/' className='NavDrawerLi' exact activeStyle={activeStyle} onClick={props.close}>Home</NavLink>
-                    <NavLink to='/foodmaker' className='NavDrawerLi' exact activeStyle={activeStyle} onClick={props.close}>Menu</NavLink>
-                    <NavLink to='/orders' className='NavDrawerLi' exact activeStyle={activeStyle} onClick={props.close}>Orders</NavLink>
-                    <NavLink to='/locations' className='NavDrawerLi' exact activeStyle={activeStyle} onClick={props.close}>Locations</NavLink>
-                    <NavLink to='/history' className='NavDrawerLi' exact activeStyle={activeStyle} onClick={props.close}>History</NavLink>
-                    <NavLink to='/careers' className='NavDrawerLi' exact activeStyle={activeStyle} onClick={props.close}>Careers</NavLink>
-                </div>
+                <NavLink  to='/' className='NavDrawerLi' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #F40135'}}>Top</NavLink>
+                  <NavLink  to='/popular' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #F40135'}} className='NavDrawerLi'>Popular</NavLink>
+                  <NavLink  to='/upcoming' exact activeStyle={{transform: 'scale(1.1)', borderBottom: '2px solid #F40135'}} className='NavDrawerLi'>Upcoming</NavLink>                </div>
                 <div className='NavDrawerContentAuth'>
                     {
                         props.isAuth ?
                             <NavLink to='/logout' exact activeStyle={activeStyle} className='NavDrawerIsAuth' style={{paddingRight: '10px'}} onClick={props.close}><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
                         :
                         <div className='NavDrawerIsNotAuth' onClick={props.close}>
-                            <NavLink to='/login' exact activeStyle={activeStyle} className='NavDrawerLi'><i className="fas fa-sign-in-alt" style={{paddingRight: '10px'}} onClick={props.close}></i> Login</NavLink>
-                            <NavLink to='/register' exact activeStyle={activeStyle} className='NavDrawerLi'><i className="fas fa-user-plus" style={{paddingRight: '10px'}} onClick={props.close}></i> Sign Up</NavLink>
+                           
                         </div>
                     }
                 </div>
