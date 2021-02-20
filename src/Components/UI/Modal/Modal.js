@@ -11,7 +11,10 @@ const Modal = (props) => {
   const [search, setSearch] = useState(null);
 
   useEffect(() => {
-    axios
+    if (props.recomended) {
+     return null
+    } else {
+      axios
       .get(
         `https://api.themoviedb.org/3/movie/${props.num}/videos?api_key=2a66c85c6e4580a0b7adfeb4fabaae5a&language=en-US`
       )
@@ -20,6 +23,7 @@ const Modal = (props) => {
           setSearch(res.data.results[0].key);
         }
       });
+    }
   }, []);
 
   let aray = [];
@@ -28,7 +32,7 @@ const Modal = (props) => {
       aray.push(props.list.find((e) => e.id === props.genreIds[a]));
     }
   }
-
+console.log(props.recomended);
   return (
     <React.Fragment>
       <Backdrop show={props.show} clicked={props.modalClosed} />
@@ -44,21 +48,29 @@ const Modal = (props) => {
           className={classes.Info}
             display="flex"
             flexDirection="column"
-            width="50%"
+           
             padding="0 2% 0 0"
           >
             <Text type="h1" size="big">
               {props.name}
             </Text>
-            <Container display="flex" flexDirection="row">
+          {props.recomended?   <Container display="flex" flexDirection="row">
+             
+            
+                  <Text type="h3" size="big" margin="0 5px 15px 0">
+                    Action
+                  </Text>
+           
+      
+            </Container> :   <Container display="flex" flexDirection="row">
               {aray.map((e, i) => {
                 return (
-                  <Text key = {i} type="h3" size="big" margin="0 5px 0 0">
+                  <Text key = {i} type="h3" size="big" margin="0 5px 15px 0">
                     {e.name}
                   </Text>
                 );
               })}
-            </Container>
+            </Container>}
             <Rating name="read-only" value={props.raiting} readOnly />
             <Text type="p" size="big" color="white">
               {props.desc}

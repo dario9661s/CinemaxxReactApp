@@ -19,6 +19,9 @@
 .Containr {
     flex-direction: row;
 }
+.Info{
+    width: 50%;
+}
 .Button p{
     
     letter-spacing: 1px;
